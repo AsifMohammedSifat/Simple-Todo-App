@@ -1,0 +1,31 @@
+1) Create template
+2) Convert it to react
+3) Create several component
+4) Redux
+    - npm i redux react-redux
+    - think about feature of the project
+
+    i) todos ii) filters
+    - create folder redux
+    
+    - create folder redux/todos
+    - create folder redux/filters
+
+    - create files redux/todos/actionTypes.js
+    - create files redux/todos/actions.js
+
+    - create files redux/filters/actionTypes.js
+    - create files redux/filters/actions.js
+
+    - npm install redux-devtools-extension --legacy-peer-deps
+
+Overall project planning:
+
+actions
+action creator
+reducer
+
+ui
+component breakdown
+useSelector
+useDispathc
