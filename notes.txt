@@ -29,3 +29,30 @@ ui
 component breakdown
 useSelector
 useDispathc
+
+
+Error:
+When i deploy this project to vercel. I have face an error due to redux-devtools-extension. then
+i have added "npm install --legacy-peer-deps" to vercel 
+setting>build and deploy->install command (override: npm install --legacy-peer-deps)
+
+Reason:
+`npm install --legacy-peer-deps` কমান্ডটি দিয়ে তুমি যেটা করেছো, সেটা হলো —
+
+👉 **পুরোনো নিয়মে npm কে বলেছো যেন dependency গুলোর version conflict বা mismatch গুলো এড়িয়ে যাক।**
+
+---
+
+### বাংলায় বুঝিয়ে বললে:
+
+নতুন npm version গুলো **dependency গুলোর মধ্যে ভার্সনের মিল না থাকলে** সেটাকে ভুল ধরে ইনস্টল বন্ধ করে দেয়।
+তোমার ক্ষেত্রে `redux@5` এবং `redux-devtools-extension@2.13.9` এর মধ্যে ভার্সনের মিল ছিল না, তাই ইনস্টল হচ্ছিল না।
+
+কিন্তু `--legacy-peer-deps` দিলে npm আর সেই চেকটা করে না।
+👉 এটা যেন বলে:
+
+> “ঠিক আছে, আমি মিল দেখছি না, তাও ইনস্টল করে দিচ্ছি, তুমি সাবধান থেকো!”
+
+---
+
+
